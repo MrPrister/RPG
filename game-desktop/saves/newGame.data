@@ -1,0 +1,2049 @@
+player::<
+     transY::0.0
+     ~
+     transX::0.0
+     ~
+     yPos::2
+     ~
+     moving::false
+     ~
+     xPos::1
+     ~
+     facing::1
+     ~
+     class::PlayerRanger
+     ~
+     dead::false
+     ~
+     inventory::<
+          slots::<
+               2::<
+                    occupied::false
+                    ~
+                    qty::0
+                    ~
+                    item::<
+
+                    >
+               >
+               ~
+               1::<
+                    occupied::false
+                    ~
+                    qty::0
+                    ~
+                    item::<
+
+                    >
+               >
+               ~
+               0::<
+                    occupied::false
+                    ~
+                    qty::1
+                    ~
+                    item::<
+                         yPos::-1
+                         ~
+                         xPos::-1
+                         ~
+                         class::game.item.consumable.Apple
+                         ~
+                         canCollect::true
+                         ~
+                         inInventory::true
+                         ~
+                         deleted::false
+                    >
+               >
+          >
+     >
+     ~
+     attributes::<
+          19::<
+               minValue::0
+               ~
+               name::brewing
+               ~
+               baseValue::10
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          22::<
+               minValue::1
+               ~
+               name::luck
+               ~
+               baseValue::3
+               ~
+               maxValue::10
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          17::<
+               minValue::0
+               ~
+               name::blocking
+               ~
+               baseValue::10
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          18::<
+               minValue::1
+               ~
+               name::strength
+               ~
+               baseValue::3
+               ~
+               maxValue::10
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          15::<
+               minValue::0
+               ~
+               name::magicResistance
+               ~
+               baseValue::12
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          16::<
+               minValue::0
+               ~
+               name::melee
+               ~
+               baseValue::8
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          13::<
+               minValue::0
+               ~
+               name::foraging
+               ~
+               baseValue::4
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          14::<
+               minValue::0
+               ~
+               name::stealth
+               ~
+               baseValue::7
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          11::<
+               minValue::0
+               ~
+               name::lockPicking
+               ~
+               baseValue::3
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          12::<
+               minValue::0
+               ~
+               name::cooking
+               ~
+               baseValue::5
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          21::<
+               minValue::1
+               ~
+               name::agility
+               ~
+               baseValue::7
+               ~
+               maxValue::10
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          3::<
+               minValue::0
+               ~
+               name::inventory
+               ~
+               baseValue::3
+               ~
+               maxValue::40
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          20::<
+               minValue::1
+               ~
+               name::intellect
+               ~
+               baseValue::6
+               ~
+               maxValue::10
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          2::<
+               minValue::0
+               ~
+               name::food
+               ~
+               baseValue::14
+               ~
+               maxValue::80
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          10::<
+               minValue::0
+               ~
+               name::decipher
+               ~
+               baseValue::10
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          1::<
+               minValue::0
+               ~
+               name::moves
+               ~
+               baseValue::2
+               ~
+               maxValue::7
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          0::<
+               minValue::0
+               ~
+               name::health
+               ~
+               baseValue::100
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          7::<
+               minValue::0
+               ~
+               name::magic
+               ~
+               baseValue::13
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          6::<
+               minValue::0
+               ~
+               name::ranged
+               ~
+               baseValue::8
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          5::<
+               minValue::0
+               ~
+               name::twoHanded
+               ~
+               baseValue::11
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          4::<
+               minValue::0
+               ~
+               name::oneHanded
+               ~
+               baseValue::15
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          9::<
+               minValue::0
+               ~
+               name::engineering
+               ~
+               baseValue::12
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+          ~
+          8::<
+               minValue::0
+               ~
+               name::medicine
+               ~
+               baseValue::10
+               ~
+               maxValue::100
+               ~
+               minBonus::<
+
+               >
+               ~
+               maxMultiplier::<
+
+               >
+               ~
+               minMultiplier::<
+
+               >
+               ~
+               bonus::<
+
+               >
+               ~
+               maxBonus::<
+
+               >
+               ~
+               multiplier::<
+
+               >
+          >
+     >
+>
+~
+levels::<
+     level1::<
+          levelNumber::1
+          ~
+          tiles::<
+               tile40::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::0
+                    ~
+                    x::6
+               >
+               ~
+               tile41::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::2
+                    ~
+                    x::6
+               >
+               ~
+               tile23::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::0
+                    ~
+                    x::3
+               >
+               ~
+               tile22::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::5
+                    ~
+                    x::2
+               >
+               ~
+               tile21::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::5
+                    ~
+                    x::3
+               >
+               ~
+               tile20::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::4
+                    ~
+                    x::3
+               >
+               ~
+               tile9::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::0
+                    ~
+                    x::2
+               >
+               ~
+               tile8::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::2
+                    ~
+                    x::1
+               >
+               ~
+               tile28::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::2
+                    ~
+                    x::4
+               >
+               ~
+               tile7::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::1
+                    ~
+                    x::1
+               >
+               ~
+               tile29::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::5
+                    ~
+                    x::4
+               >
+               ~
+               tile6::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::4
+                    ~
+                    x::4
+               >
+               ~
+               tile26::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::2
+                    ~
+                    x::2
+               >
+               ~
+               tile27::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::0
+                    ~
+                    x::1
+               >
+               ~
+               tile24::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::1
+                    ~
+                    x::3
+               >
+               ~
+               tile25::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::1
+                    ~
+                    x::2
+               >
+               ~
+               tile1::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::3
+                    ~
+                    x::6
+               >
+               ~
+               tile0::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::1
+                    ~
+                    x::6
+               >
+               ~
+               tile5::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::3
+                    ~
+                    x::0
+               >
+               ~
+               tile4::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::2
+                    ~
+                    x::0
+               >
+               ~
+               tile3::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::0
+                    ~
+                    x::5
+               >
+               ~
+               tile2::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::1
+                    ~
+                    x::5
+               >
+               ~
+               tile30::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::0
+                    ~
+                    x::0
+               >
+               ~
+               tile31::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::5
+                    ~
+                    x::0
+               >
+               ~
+               tile32::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::4
+                    ~
+                    x::0
+               >
+               ~
+               tile33::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::3
+                    ~
+                    x::4
+               >
+               ~
+               tile34::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::0
+                    ~
+                    x::4
+               >
+               ~
+               tile10::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::3
+                    ~
+                    x::1
+               >
+               ~
+               tile12::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::4
+                    ~
+                    x::5
+               >
+               ~
+               tile11::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::5
+                    ~
+                    x::1
+               >
+               ~
+               tile17::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::4
+                    ~
+                    x::6
+               >
+               ~
+               tile18::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::2
+                    ~
+                    x::3
+               >
+               ~
+               tile19::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::3
+                    ~
+                    x::3
+               >
+               ~
+               tile13::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::4
+                    ~
+                    x::1
+               >
+               ~
+               tile14::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::2
+                    ~
+                    x::5
+               >
+               ~
+               tile15::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::3
+                    ~
+                    x::5
+               >
+               ~
+               tile16::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::5
+                    ~
+                    x::6
+               >
+               ~
+               tile36::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::1
+                    ~
+                    x::0
+               >
+               ~
+               tile35::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::1
+                    ~
+                    x::4
+               >
+               ~
+               tile38::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::3
+                    ~
+                    x::2
+               >
+               ~
+               tile37::<
+                    free::true
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::false
+                    ~
+                    y::4
+                    ~
+                    x::2
+               >
+               ~
+               tile39::<
+                    free::false
+                    ~
+                    rotation::0
+                    ~
+                    class::game.level.Tile
+                    ~
+                    blocked::true
+                    ~
+                    y::5
+                    ~
+                    x::5
+               >
+          >
+          ~
+          items::<
+               item4::<
+                    yPos::6
+                    ~
+                    xPos::9
+                    ~
+                    class::game.item.consumable.Apple
+                    ~
+                    canCollect::true
+                    ~
+                    inInventory::false
+                    ~
+                    deleted::false
+               >
+               ~
+               item2::<
+                    yPos::8
+                    ~
+                    xPos::6
+                    ~
+                    class::game.item.consumable.Apple
+                    ~
+                    canCollect::true
+                    ~
+                    inInventory::false
+                    ~
+                    deleted::false
+               >
+               ~
+               item3::<
+                    yPos::7
+                    ~
+                    xPos::6
+                    ~
+                    class::game.item.consumable.Apple
+                    ~
+                    canCollect::true
+                    ~
+                    inInventory::false
+                    ~
+                    deleted::false
+               >
+               ~
+               item1::<
+                    yPos::6
+                    ~
+                    xPos::7
+                    ~
+                    class::game.item.consumable.Apple
+                    ~
+                    canCollect::true
+                    ~
+                    inInventory::false
+                    ~
+                    deleted::false
+               >
+               ~
+               item6::<
+                    yPos::8
+                    ~
+                    xPos::7
+                    ~
+                    class::game.item.consumable.Apple
+                    ~
+                    canCollect::true
+                    ~
+                    inInventory::false
+                    ~
+                    deleted::false
+               >
+               ~
+               item0::<
+                    yPos::6
+                    ~
+                    xPos::8
+                    ~
+                    class::game.item.consumable.Apple
+                    ~
+                    canCollect::true
+                    ~
+                    inInventory::false
+                    ~
+                    deleted::false
+               >
+               ~
+               item5::<
+                    yPos::7
+                    ~
+                    xPos::7
+                    ~
+                    class::game.item.consumable.Apple
+                    ~
+                    canCollect::true
+                    ~
+                    inInventory::false
+                    ~
+                    deleted::false
+               >
+               ~
+               item7::<
+                    yPos::8
+                    ~
+                    xPos::8
+                    ~
+                    class::game.item.consumable.Apple
+                    ~
+                    canCollect::true
+                    ~
+                    inInventory::false
+                    ~
+                    deleted::false
+               >
+          >
+          ~
+          actors::<
+               actor0::<
+                    transY::0.0
+                    ~
+                    transX::0.0
+                    ~
+                    yPos::4
+                    ~
+                    moving::false
+                    ~
+                    xPos::8
+                    ~
+                    facing::2
+                    ~
+                    class::game.actor.Zombie
+                    ~
+                    dead::false
+                    ~
+                    attributes::<
+                         1::<
+                              minValue::0
+                              ~
+                              name::moves
+                              ~
+                              baseValue::2
+                              ~
+                              maxValue::2
+                              ~
+                              minBonus::<
+
+                              >
+                              ~
+                              maxMultiplier::<
+
+                              >
+                              ~
+                              minMultiplier::<
+
+                              >
+                              ~
+                              bonus::<
+
+                              >
+                              ~
+                              maxBonus::<
+
+                              >
+                              ~
+                              multiplier::<
+
+                              >
+                         >
+                         ~
+                         0::<
+                              minValue::0
+                              ~
+                              name::health
+                              ~
+                              baseValue::10
+                              ~
+                              maxValue::10
+                              ~
+                              minBonus::<
+
+                              >
+                              ~
+                              maxMultiplier::<
+
+                              >
+                              ~
+                              minMultiplier::<
+
+                              >
+                              ~
+                              bonus::<
+
+                              >
+                              ~
+                              maxBonus::<
+
+                              >
+                              ~
+                              multiplier::<
+
+                              >
+                         >
+                    >
+               >
+               ~
+               actor4::<
+                    transY::0.0
+                    ~
+                    transX::0.0
+                    ~
+                    yPos::8
+                    ~
+                    moving::false
+                    ~
+                    xPos::2
+                    ~
+                    facing::2
+                    ~
+                    class::game.actor.Goblin
+                    ~
+                    dead::false
+                    ~
+                    attributes::<
+                         1::<
+                              minValue::0
+                              ~
+                              name::moves
+                              ~
+                              baseValue::2
+                              ~
+                              maxValue::2
+                              ~
+                              minBonus::<
+
+                              >
+                              ~
+                              maxMultiplier::<
+
+                              >
+                              ~
+                              minMultiplier::<
+
+                              >
+                              ~
+                              bonus::<
+
+                              >
+                              ~
+                              maxBonus::<
+
+                              >
+                              ~
+                              multiplier::<
+
+                              >
+                         >
+                         ~
+                         0::<
+                              minValue::0
+                              ~
+                              name::health
+                              ~
+                              baseValue::10
+                              ~
+                              maxValue::10
+                              ~
+                              minBonus::<
+
+                              >
+                              ~
+                              maxMultiplier::<
+
+                              >
+                              ~
+                              minMultiplier::<
+
+                              >
+                              ~
+                              bonus::<
+
+                              >
+                              ~
+                              maxBonus::<
+
+                              >
+                              ~
+                              multiplier::<
+
+                              >
+                         >
+                    >
+               >
+               ~
+               actor3::<
+                    transY::0.0
+                    ~
+                    transX::0.0
+                    ~
+                    yPos::6
+                    ~
+                    moving::false
+                    ~
+                    xPos::6
+                    ~
+                    facing::2
+                    ~
+                    class::game.actor.Goblin
+                    ~
+                    dead::false
+                    ~
+                    attributes::<
+                         1::<
+                              minValue::0
+                              ~
+                              name::moves
+                              ~
+                              baseValue::2
+                              ~
+                              maxValue::2
+                              ~
+                              minBonus::<
+
+                              >
+                              ~
+                              maxMultiplier::<
+
+                              >
+                              ~
+                              minMultiplier::<
+
+                              >
+                              ~
+                              bonus::<
+
+                              >
+                              ~
+                              maxBonus::<
+
+                              >
+                              ~
+                              multiplier::<
+
+                              >
+                         >
+                         ~
+                         0::<
+                              minValue::0
+                              ~
+                              name::health
+                              ~
+                              baseValue::10
+                              ~
+                              maxValue::10
+                              ~
+                              minBonus::<
+
+                              >
+                              ~
+                              maxMultiplier::<
+
+                              >
+                              ~
+                              minMultiplier::<
+
+                              >
+                              ~
+                              bonus::<
+
+                              >
+                              ~
+                              maxBonus::<
+
+                              >
+                              ~
+                              multiplier::<
+
+                              >
+                         >
+                    >
+               >
+               ~
+               actor2::<
+                    transY::0.0
+                    ~
+                    transX::0.0
+                    ~
+                    yPos::9
+                    ~
+                    moving::false
+                    ~
+                    xPos::3
+                    ~
+                    facing::2
+                    ~
+                    class::game.actor.Zombie
+                    ~
+                    dead::false
+                    ~
+                    attributes::<
+                         1::<
+                              minValue::0
+                              ~
+                              name::moves
+                              ~
+                              baseValue::2
+                              ~
+                              maxValue::2
+                              ~
+                              minBonus::<
+
+                              >
+                              ~
+                              maxMultiplier::<
+
+                              >
+                              ~
+                              minMultiplier::<
+
+                              >
+                              ~
+                              bonus::<
+
+                              >
+                              ~
+                              maxBonus::<
+
+                              >
+                              ~
+                              multiplier::<
+
+                              >
+                         >
+                         ~
+                         0::<
+                              minValue::0
+                              ~
+                              name::health
+                              ~
+                              baseValue::10
+                              ~
+                              maxValue::10
+                              ~
+                              minBonus::<
+
+                              >
+                              ~
+                              maxMultiplier::<
+
+                              >
+                              ~
+                              minMultiplier::<
+
+                              >
+                              ~
+                              bonus::<
+
+                              >
+                              ~
+                              maxBonus::<
+
+                              >
+                              ~
+                              multiplier::<
+
+                              >
+                         >
+                    >
+               >
+               ~
+               actor1::<
+                    transY::0.0
+                    ~
+                    transX::0.0
+                    ~
+                    yPos::7
+                    ~
+                    moving::false
+                    ~
+                    xPos::11
+                    ~
+                    facing::2
+                    ~
+                    class::game.actor.Zombie
+                    ~
+                    dead::false
+                    ~
+                    attributes::<
+                         1::<
+                              minValue::0
+                              ~
+                              name::moves
+                              ~
+                              baseValue::2
+                              ~
+                              maxValue::2
+                              ~
+                              minBonus::<
+
+                              >
+                              ~
+                              maxMultiplier::<
+
+                              >
+                              ~
+                              minMultiplier::<
+
+                              >
+                              ~
+                              bonus::<
+
+                              >
+                              ~
+                              maxBonus::<
+
+                              >
+                              ~
+                              multiplier::<
+
+                              >
+                         >
+                         ~
+                         0::<
+                              minValue::0
+                              ~
+                              name::health
+                              ~
+                              baseValue::10
+                              ~
+                              maxValue::10
+                              ~
+                              minBonus::<
+
+                              >
+                              ~
+                              maxMultiplier::<
+
+                              >
+                              ~
+                              minMultiplier::<
+
+                              >
+                              ~
+                              bonus::<
+
+                              >
+                              ~
+                              maxBonus::<
+
+                              >
+                              ~
+                              multiplier::<
+
+                              >
+                         >
+                    >
+               >
+          >
+          ~
+          objects::<
+               object1::<
+                    transY::0.0
+                    ~
+                    transX::0.0
+                    ~
+                    yPos::1
+                    ~
+                    immune::false
+                    ~
+                    xPos::1
+                    ~
+                    class::game.object.Entrance
+                    ~
+                    blocked::false
+               >
+               ~
+               object2::<
+                    transY::0.0
+                    ~
+                    transX::0.0
+                    ~
+                    yPos::15
+                    ~
+                    immune::false
+                    ~
+                    xPos::11
+                    ~
+                    class::game.object.Exit
+                    ~
+                    blocked::false
+               >
+               ~
+               object0::<
+                    transY::0.0
+                    ~
+                    transX::0.0
+                    ~
+                    yPos::3
+                    ~
+                    immune::false
+                    ~
+                    xPos::3
+                    ~
+                    looted::true
+                    ~
+                    class::game.object.container.WoodenCrate
+                    ~
+                    blocked::false
+               >
+          >
+     >
+>

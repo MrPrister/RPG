@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="18" height="13" tilewidth="40" tileheight="40">
+ <tileset firstgid="1" name="VILDAM" tilewidth="40" tileheight="40">
+  <image source="VILDAM.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="626" name="VILFLR" tilewidth="40" tileheight="40">
+  <image source="VILFLR.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="18" height="13">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYAJiFjIxBxBzArEUEEsDsSyZWBGIlYDYGIhNgNiMTGwFxNZAnMpAOcgdNWfEmnOSCuZcBOJHQPwYiJ+SiV8C8SsgBgAowx5z
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="18" height="13">
+  <data encoding="base64" compression="zlib">
+   eJxjYBi+oIiJMjxqzqg51DCHGgAAefNBQQ==
+  </data>
+ </layer>
+</map>

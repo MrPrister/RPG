@@ -1,0 +1,188 @@
+/ -----------------------------------------------------------------------------------------------/
+		WEAPONS
+/ -----------------------------------------------------------------------------------------------/
+	Melee:
+		Daggers:
+			Sacrificial Dagger
+			Knightly Dagger
+			Stiletto
+			Parrying Dagger
+
+
+		Swords:
+			Mailbreaker
+			Shortsword
+			Longsword
+			Broadsword
+			Claymore
+			Scimitar
+			Rapier
+			Cutlass
+			Katana
+			Shotel
+
+
+		Polearms:
+			Spear
+			Yari
+			Glaive
+			Halberd
+			Poleaxe
+			Winged Spear
+			Pitchfork
+			Guandao
+
+
+		Axes:
+			Hatchet
+			Splitting Axe
+			Tomahawk
+			Bearded Axe
+			Ono
+
+		Hammers:
+			Blacksmith Hammer
+			War Hammer
+			Sledge Hammer
+
+		Clubs:
+			Mace
+			Flanged Mace
+			Morning Star
+			Jitte
+
+
+		Flails:
+			Nunchaku
+			Meteor Hammer
+			Manriki
+			Bolas
+		
+
+	Ranged:
+		Bows:
+			Self Bow
+			Recurve Bow
+			Composite Bow
+			Longbow
+
+		Crossbows:
+			Gastraphetes
+			Chu-ko-nu
+			Basic Crossbow
+			Arbalest
+
+		Projectile:
+			Arrow
+			Bolt
+			Flaming Arrow
+
+		Thrown:
+			Throwing Knife
+			Throwing Axe
+			Chakram
+			Dragon Beard Hook
+			Shuriken
+			Javelin
+			Pilum
+			Trident
+
+	Magic:
+		Ice
+		Fire
+		Water
+		????
+
+	Explosive:
+		Greek Fire Pot
+		Zhen Tian Lei
+
+	Placeable:
+		????
+
+/ -----------------------------------------------------------------------------------------------/
+		ITEMS
+/ -----------------------------------------------------------------------------------------------/
+	
+	Medicine:
+		Bandage
+		Health Potion
+
+
+	Skill Items:
+		Strength Book
+		Intelligence Book
+		Agility Book
+
+
+	Quest Items:	
+		Key
+		Keystone
+
+/ -----------------------------------------------------------------------------------------------/
+		OBJECTS
+/ -----------------------------------------------------------------------------------------------/
+
+	Containers:
+		Wooden Chest
+		Metal Chest
+		Ornate Chest
+		Wooden Box / Crate
+
+	Workbenches:
+		Workbench
+		Forge
+		Anvil
+
+	Decorative:
+		Bookshelf
+		Chair
+		Table
+		Fireplace
+		Gargoyle
+		Staligymite  ???
+
+/ -----------------------------------------------------------------------------------------------/
+		ACTORS
+/ -----------------------------------------------------------------------------------------------/
+	
+	Player:
+		Knight
+		Rogue
+		Wizard
+		Champion
+
+	Ally:
+
+	Neutral:
+
+	Enemy:
+		Zombie
+		Skeleton
+		Vampire
+		Werewolf
+		Warlock
+		Witch
+		Dragon
+		Orc
+		Ogre
+		Cyclopse
+		Troll
+		Goblin
+
+/ -----------------------------------------------------------------------------------------------/
+		TILES
+/ -----------------------------------------------------------------------------------------------/
+
+	Themes:
+		Dungeon
+		Castle
+		Cave
+
+/ -----------------------------------------------------------------------------------------------/
+		EFFECTS
+/ -----------------------------------------------------------------------------------------------/
+
+	Explosion
+	Fire
+	Magic Collisions
