@@ -1,0 +1,10 @@
+executable: game-exe.jar
+
+controls:
+W		-	Forward / Up
+A		-	Right
+S		-	Back / Down
+D 		-	Left
+
+I		-	Inventory
+SPACE	-	Attack
