@@ -169,19 +169,19 @@ public class Level {
 		
 		for (int i = 0; i < 5; i++) {
 			actors.add(
-					new Zombie(Random.number(room.x, room.x + room.width), Random.number(room.y, room.y + room.height))
+					new Zombie(Random.number(room.x + 1, room.x + (room.width - 1) - 1), Random.number(room.y + 1, room.y + (room.height - 1) - 1))
 			);
 		}
 		
 		for (int i = 0; i < 5; i++) {
 			items.add(
-					new Apple(Random.number(room.x, room.x + room.width), Random.number(room.y, room.y + room.height))
+					new Apple(Random.number(room.x + 1, room.x + (room.width - 1) - 1), Random.number(room.y + 1, room.y + (room.height - 1) - 1))
 			);
 		}
 		
 		for (int i = 0; i < 1; i++) {
 			objects.add(
-					new WoodenCrate(Random.number(room.x, room.x + room.width), Random.number(room.y, room.y + room.height))
+					new WoodenCrate(Random.number(room.x + 1, room.x + (room.width - 1) - 1), Random.number(room.y + 1, room.y + (room.height - 1) - 1))
 			);
 		}
 		
