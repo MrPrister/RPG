@@ -106,7 +106,7 @@ public class Level {
 	}
 	
 	public void updateGlobals() {
-		System.out.println("updating globals");
+		System.out.println("updating globals [Level.java]");
 		
 		//Globals.map = map;
 		Globals.tileWidth = 48;
@@ -139,15 +139,11 @@ public class Level {
 	 * create the level 
 	 */
 	public void create() {
-		//for (int i = 0; i < 20; i++) {
-		//	for (int j = 0; j < 20; j++) {
-		//		tiles.add(new WoodFloor1(i, j, false, true));
-		//	}
-		//}
+
 		Room room = new Room();
 		
 		room.floorTile = new WoodFloor1();
-		room.doorTile = new WoodFloor1();
+		room.doorTile = new WoodFloor1();		// tile space for door, the actual door is an object
 		
 		room.leftWallTile = new StoneWall1();
 		room.rightWallTile = new StoneWall1();
@@ -158,30 +154,41 @@ public class Level {
 		room.topLeftWallTile = new StoneWall1();
 		room.topRightWallTile = new StoneWall1();
 		
-		ArrayList<Tile> tileList = room.generateRoom(Random.number(4, 20), Random.number(4, 20));
+		int width = Random.number(6, 20);
+		int height = Random.number(6, 20);
+		
+		//debug
+		System.out.println("generating room: " + width + ", " + height);
+		ArrayList<Tile> tileList = room.generateRoom(width, height);
+		
 		for (int i = 0; i < tileList.size(); i++) {
 			tiles.add(tileList.get(i));
 		}
 		
-		actors.add(new Zombie(4,4));
-		actors.add(new Zombie(8,4));
-		actors.add(new Zombie(11,7));
-		actors.add(new Zombie(3,9));
-		actors.add(new Goblin(6,6));
-		actors.add(new Goblin(2,8));
+		// place holder - add some items to the room
 		
-		items.add(new Apple(7,6));
-		items.add(new Apple(8,6));
-		items.add(new Apple(9,6));
-		items.add(new Apple(6,7));
-		items.add(new Apple(6,8));
-		items.add(new Apple(7,7));
-		items.add(new Apple(7,8));
-		items.add(new Apple(8,8));
+		for (int i = 0; i < 5; i++) {
+			actors.add(
+					new Zombie(Random.number(room.x, room.x + room.width), Random.number(room.y, room.y + room.height))
+			);
+		}
 		
-		objects.add(new Entrance(1,1));
-		objects.add(new Exit(11,15));
-		objects.add(new WoodenCrate(3,3));
+		for (int i = 0; i < 5; i++) {
+			items.add(
+					new Apple(Random.number(room.x, room.x + room.width), Random.number(room.y, room.y + room.height))
+			);
+		}
+		
+		for (int i = 0; i < 1; i++) {
+			objects.add(
+					new WoodenCrate(Random.number(room.x, room.x + room.width), Random.number(room.y, room.y + room.height))
+			);
+		}
+		
+		// level entrance and exits not doors
+		// objects.add(new Entrance(1,1));
+		// objects.add(new Exit(11,15));
+
 	}
 
 	public int getLevelNumber() {
