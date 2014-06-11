@@ -465,9 +465,8 @@ public abstract class Actor {
 				// do nothing
 				break;
 			}
-			
-			if(Globals.tiles.isTile(checkX, checkY) && Globals.tiles.getTile(checkX, checkY).isBlocked() || Globals.actors.isOccupied(checkX, checkY)) {
-			//if(Globals.map.isTileBlocked(checkX, checkY) || Globals.actors.isOccupied(checkX, checkY)) {
+						
+			if(Globals.level.tileHasCollision(checkX, checkY) || Globals.actors.isOccupied(checkX, checkY)) {
 				return false;
 			} else {
 				return true;

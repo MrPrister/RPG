@@ -2,9 +2,10 @@ package game.level;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.math.Vector2;
+
 import tools.Globals;
 import tools.random.Random;
-
 import game.level.Map;
 import game.level.tile.*;
 import game.actor.ActorManager;
@@ -112,6 +113,7 @@ public class Level {
 		Globals.tileWidth = 48;
 		Globals.tileHeight = 48;
 		
+		Globals.level = this;
 		Globals.tiles = tiles;
 		Globals.actors = actors;
 		Globals.items = items;
@@ -161,6 +163,7 @@ public class Level {
 		System.out.println("generating room: " + width + ", " + height);
 		ArrayList<Tile> tileList = room.generateRoom(width, height);
 		
+		// add the generated tiles to the level tile list
 		for (int i = 0; i < tileList.size(); i++) {
 			tiles.add(tileList.get(i));
 		}
@@ -189,6 +192,36 @@ public class Level {
 		// objects.add(new Entrance(1,1));
 		// objects.add(new Exit(11,15));
 
+	}
+	
+	/**
+	 * returns whether the specified tile is free (if no tile exists false is returned)
+	 * @param pos
+	 * @return boolean
+	 */
+	public boolean isTileFree(int x, int y) {
+		Tile tile = tiles.getTile(x, y);
+		
+		if(tile == null || !tile.isFree()) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	/**
+	 * returns whether the specified tile has collision (if no tile exists true is returned)
+	 * @param pos
+	 * @return boolean
+	 */
+	public boolean tileHasCollision(int x, int y) {
+		Tile tile = tiles.getTile(x, y);
+		
+		if(tile == null || tile.isBlocked()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public int getLevelNumber() {

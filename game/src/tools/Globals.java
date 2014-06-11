@@ -10,10 +10,10 @@ import game.camera.Camera;
 import game.camera.Hud;
 import game.camera.ScreenTextManager;
 import game.item.ItemManager;
+import game.level.Level;
 import game.level.Map;
 import game.level.TileManager;
 import game.object.ObjectManager;
-
 import main.SavePart;
 import main.state.StateManager;
 
@@ -54,6 +54,8 @@ public class Globals {
 	public static Game game;
 	public static AnimationManager animations;
 	public static ScreenTextManager screenText;
+	
+	public static Level level;
 	
 	public static TileManager tiles;
 	public static ObjectManager objects;
