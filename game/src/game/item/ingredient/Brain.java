@@ -74,4 +74,29 @@ public class Brain extends Item implements Craftable {
 		
 	}
 
+	@Override
+	public boolean canEquip() {
+		return false;
+	}
+
+	@Override
+	public int equipSlot() {
+		return 0;
+	}
+
+	@Override
+	public boolean canUse() {
+		return true;
+	}
+
+	@Override
+	public boolean canDrop() {
+		return true;
+	}
+
+	@Override
+	public boolean canDestory() {
+		return true;
+	}
+
 }

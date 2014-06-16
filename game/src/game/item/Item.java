@@ -35,17 +35,18 @@ public abstract class Item {
 	public abstract void use();					// code to run when an item is used
 	public abstract void pickup();				// code to run when an item is picked up
 	public abstract void drop();				// code to run when an item is dropped
-	public abstract void destroy();				// code to run when an item is destroyed
+	public abstract void destroy();				// code to run when an item is destroyed			
 	
-	public boolean canUse = true;				// can the item be used
-	public boolean canDrop = true;				// can the item be dropped
-	public boolean canDestory = true;			// can the item be destroyed
+	public abstract boolean canEquip();			// can the item be equipped
+	public abstract int equipSlot();			// the slot the item is equipped to
+	public abstract boolean canUse();			// can the item be used
+	public abstract boolean canDrop();			// can the item be dropped
+	public abstract boolean canDestory();		// can the item be destroyed
 	
-	//public String useOption = "Use";			// name of the use option in the menu
+	// menu text, can be overridden in each sub class
+	public String getEquipOption() { return "Equip"; }
 	public String getUseOption() { return "Use"; }
-	//public String dropOption = "Drop";			// name of the drop option in the menu
 	public String getDropOption() { return "Drop"; }
-	//public String destroyOption = "Destroy";	// name of the destroy option in the menu
 	public String getDestroyOption() { return "Destroy"; }
 	
 	/**
@@ -59,6 +60,7 @@ public abstract class Item {
 		y = Integer.parseInt(data.get("yPos", "0"));
 		
 		canCollect = Boolean.parseBoolean(data.get("canCollect", "true"));
+		
 		inInventory = Boolean.parseBoolean(data.get("inInventory", "false"));
 		deleted = Boolean.parseBoolean(data.get("deleted", "false"));
 		
@@ -87,8 +89,10 @@ public abstract class Item {
 		this.name = itemName();
 		this.maxStack = maxStack();
 		
-		paddingX = (int) ((Globals.tileWidth - image.getWidth()) / 2);
-		paddingY = (int) ((Globals.tileHeight - image.getHeight()) / 2);
+		if(this.image != null) {
+			paddingX = (int) ((Globals.tileWidth - image.getWidth()) / 2);
+			paddingY = (int) ((Globals.tileHeight - image.getHeight()) / 2);
+		}
 	}
 	
 	/**
@@ -204,6 +208,4 @@ public abstract class Item {
 	public void setCanCollect(boolean canCollect) {
 		this.canCollect = canCollect;
 	}
-
-
 }

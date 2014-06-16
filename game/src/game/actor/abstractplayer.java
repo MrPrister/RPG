@@ -12,6 +12,8 @@ import game.actor.attribute.Attribute;
 import game.camera.ScreenText;
 import game.item.Inventory;
 import game.item.Item;
+import game.item.interfaces.Weapon;
+import game.item.weapon.Fists;
 import tools.Globals;
 import tools.random.Random;
 
@@ -341,20 +343,14 @@ public class AbstractPlayer extends Actor {
 
 	@Override
 	public void attack() {
-		Vector2 toAttack = getFacingTile();
-		Globals.actors.hurtActorInTile(toAttack, Random.number(10, 30));
+		// get the equipped weapon and attack with it
+		Weapon weapon = (Weapon) Globals.player.inventory.getEquipped(Inventory.equipWeapon);
 		
-		// random attack amount
-		/*
-		 * take the weapons base damage
-		 * do some maths with the associated skill
-		 * pass these variables to the luck 
-		 */
-		
-		if(Globals.delayManager.isDelayFinished("AttackSound")) {
-			Sound sound = Gdx.audio.newSound(Gdx.files.internal("sound/sword_swipe.mp3"));
-			sound.play();
-			Globals.delayManager.add("AttackSound", 1f);
+		if(weapon != null) {
+			weapon.attack();
+		} else {
+			Fists fists = new Fists();
+			fists.attack();
 		}
 	}
 

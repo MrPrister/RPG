@@ -1,5 +1,8 @@
 package game.item;
 
+import game.item.interfaces.Equipable;
+import game.item.interfaces.Weapon;
+
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -13,7 +16,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
-import com.badlogic.gdx.math.Vector;
 import com.badlogic.gdx.math.Vector2;
 
 import tools.Fonts;
@@ -22,18 +24,24 @@ import tools.Tools;
 
 /**
  * class for holding and managing the player inventory
- * @author mattadams
+ * @author Matt Adams
  *
  */
 public class Inventory {
 
 	protected SavePart save;
-	//protected ArrayList<InventorySlot> slots;
+	
+	protected HashMap<Integer, EquippedSlot> equipped;		// inventory slots where equipped items are kept
+	public static int equipArmour = 1;
+	public static int equipWeapon = 2;
+	public static int equipAmmo = 3;
+	public static int equipAccessory = 4;
+	
 	protected HashMap<Integer, InventorySlot> slots;
 	protected int width;
 	
 	public Inventory(int num) {
-		//slots = new ArrayList<InventorySlot>();
+		equipped = new HashMap<Integer, EquippedSlot>();
 		slots = new HashMap<Integer, InventorySlot>();
 		setSlots(num);
 		
@@ -43,7 +51,25 @@ public class Inventory {
 	public Inventory(SavePart data) {
 		save = data;
 		
-		//slots = new ArrayList<InventorySlot>();
+		// get equipped items from save file
+		equipped = new HashMap<Integer, EquippedSlot>();
+		
+		SavePart equipped = data.getSubset("equipped");
+		
+		if(equipped != null) {
+			// add each of the items from the save data to the inventory
+			HashMap<String, SavePart> equippedList = equipped.getSubsets();
+			
+			System.out.println("loading " + equippedList.size() + " equipped slots");
+			
+			for (Entry<String, SavePart> equippedPair : equippedList.entrySet()) {
+				// item loading handled in InventorySlot
+				SavePart slot = equippedPair.getValue();
+				this.equipped.put(Integer.parseInt(equippedPair.getKey()), new EquippedSlot(slot));
+			}
+		}
+		
+		// get inventory items from save file
 		slots = new HashMap<Integer, InventorySlot>();
 		
 		SavePart slots = data.getSubset("slots");
@@ -63,11 +89,20 @@ public class Inventory {
 	}
 	
 	public SavePart save() {
-		// clear all inventory items
+		// clear all old save ready for the new data
 		save.clear();
+
+		// equipped
+		SavePart equippedSlots = new SavePart();
 		
-		//save.put("num", slots.size());
+		for (Entry<Integer, InventorySlot> equippedPair : slots.entrySet()) {
+			equippedSlots.putSubset(String.valueOf(equippedPair.getKey()), equippedPair.getValue().save());
+		}
 		
+		save.putSubset("equipped", equippedSlots);	
+		
+		
+		// inventory
 		SavePart invSlots = new SavePart();
 		
 		for (Entry<Integer, InventorySlot> slotPair : slots.entrySet()) {
@@ -341,6 +376,48 @@ public class Inventory {
 		float slotY = invY - ((currentRow * slotHeight) + ((currentRow - 1) * slotYPadding));
 		
 		return new Vector2(slotX, slotY);
+	}
+	
+	/**
+	 * set an item to its equipable slot
+	 * @param item
+	 * @return
+	 */
+	public boolean equip(InventorySlot slot) {
+		
+		// exit early if there is no item to equip
+		if(slot == null || !slot.isOccupied()) {
+			return false;
+		}
+		
+		Item toEquip = slot.getItem();
+		Integer equipSlot = toEquip.equipSlot();
+		
+		if(equipSlot != 0) {
+			// equip the item
+			
+			if(equipped.containsKey(equipSlot) && equipped.get(equipSlot).isOccupied()) {
+				// the slot already contains an item, swap the already equipped item with the item to equip
+				InventorySlot alreadyEquipped = equipped.get(equipSlot);
+				equipped.put(equipSlot, (EquippedSlot) slot);
+				slot.empty();
+				slot.copy(alreadyEquipped);
+			} else {
+				equipped.put(equipSlot, new EquippedSlot(slot));
+				slot.empty();
+			}
+		}
+		
+		return false;
+	}
+
+	// return the item in an equipped slot
+	public Item getEquipped(int equipSlot) {
+		if(equipped.containsKey(equipSlot) && equipped.get(equipSlot).isOccupied()) {
+			return equipped.get(equipSlot).getItem();
+		} else {
+			return null;
+		}
 	}
 	
 }

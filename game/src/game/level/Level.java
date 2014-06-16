@@ -13,6 +13,7 @@ import game.actor.Goblin;
 import game.actor.Zombie;
 import game.item.ItemManager;
 import game.item.consumable.Apple;
+import game.item.weapon.Sword;
 import game.object.Entrance;
 import game.object.Exit;
 import game.object.ObjectManager;
@@ -181,6 +182,7 @@ public class Level {
 					new Apple(Random.number(room.x + 1, room.x + (room.width - 1) - 1), Random.number(room.y + 1, room.y + (room.height - 1) - 1))
 			);
 		}
+		items.add(new Sword(1,1));
 		
 		for (int i = 0; i < 1; i++) {
 			objects.add(

@@ -10,13 +10,10 @@ public class InventorySlot {
 	protected Item contents;						// the item in this slot
 	protected int qty;							// the number of item in this slot
 	
-	protected boolean occupied;					// for multi slot items
-	
 	public InventorySlot(SavePart data) {
 		save = data;
 		contents = null;
-		
-		occupied = Boolean.parseBoolean(data.get("occupied", "false"));
+
 		qty = Integer.parseInt(data.get("qty", "0"));
 		SavePart item = data.getSubset("item");
 
@@ -44,13 +41,11 @@ public class InventorySlot {
 		save = new SavePart();
 		contents = null;
 		qty = 0;
-		occupied = false;
 	}
 	
 	public SavePart save() {
 		save.clear();
 		
-		save.put("occupied", occupied);
 		save.put("qty", qty);
 		
 		// make a save part for the item and save it
@@ -119,8 +114,6 @@ public class InventorySlot {
 	public void empty() {
 		contents = null;
 		qty = 0;
-		
-		//occupied = false;
 	}
 	
 	/**
@@ -166,6 +159,15 @@ public class InventorySlot {
 	
 	public Item getItem() {
 		return contents;
+	}
+	
+	/**
+	 * copy the contents of another inventory slot to this one
+	 * @param alreadyEquipped
+	 */
+	public void copy(InventorySlot alreadyEquipped) {
+		this.contents = alreadyEquipped.getItem();
+		this.qty = alreadyEquipped.getQty();
 	}
 
 }

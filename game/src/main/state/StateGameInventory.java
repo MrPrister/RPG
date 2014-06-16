@@ -68,16 +68,19 @@ public class StateGameInventory extends AbstractState {
 					Item slotItem = clickedSlot.getItem();
 					
 					// only show a menu if an item is in the slot and an action is valid for the item
-					if(slotItem != null && (slotItem.canUse || slotItem.canDrop || slotItem.canDestory)) {
+					if(slotItem != null && (slotItem.canEquip() || slotItem.canUse() || slotItem.canDrop() || slotItem.canDestory())) {
 						BitmapFont font = Fonts.font32;
 						menu = new Menu();
-						if(slotItem.canUse) {
+						if(slotItem.canEquip()) {
+							menu.addOption(new Label(clickedSlot.getItem().getEquipOption(), font), ITEM_MENU_EQUIP);
+						}
+						if(slotItem.canUse()) {
 							menu.addOption(new Label(clickedSlot.getItem().getUseOption(), font), ITEM_MENU_USE);
 						}
-						if(slotItem.canDrop) {
+						if(slotItem.canDrop()) {
 							menu.addOption(new Label(clickedSlot.getItem().getDropOption(), font), ITEM_MENU_DROP);
 						}
-						if(slotItem.canDestory) {
+						if(slotItem.canDestory()) {
 							menu.addOption(new Label(clickedSlot.getItem().getDestroyOption(), font), ITEM_MENU_DESTROY);
 						}
 						menu.addOption(new Label("Cancel", font), ITEM_MENU_CANCEL);
@@ -91,9 +94,10 @@ public class StateGameInventory extends AbstractState {
 						
 						menu.setFocusXDelta(10);
 						
-						// need a way to do this automatically based on menu options
-						menu.setWidth(100);
-						menu.setHeight(100);
+						// TODO: need a way to do this automatically based on menu options
+						// i believe it's possible to add the bounds of the text to get the height and get the max width
+						menu.setWidth(120);
+						menu.setHeight(120);
 						
 						showMenu = true;
 					} else {
@@ -115,10 +119,11 @@ public class StateGameInventory extends AbstractState {
 		clickedSlot = null;
 	}
 	
-	public final int ITEM_MENU_USE = 0;
-	public final int ITEM_MENU_DROP = 1;
-	public final int ITEM_MENU_DESTROY = 2;
-	public final int ITEM_MENU_CANCEL = 3;
+	public final int ITEM_MENU_EQUIP = 0;
+	public final int ITEM_MENU_USE = 1;
+	public final int ITEM_MENU_DROP = 2;
+	public final int ITEM_MENU_DESTROY = 3;
+	public final int ITEM_MENU_CANCEL = 4;
 	
 	@Override
 	void update(float delta) {
@@ -129,10 +134,16 @@ public class StateGameInventory extends AbstractState {
 				Item slotItem = clickedSlot.getItem();
 				
 				switch(menu.getSelected()) {
+					case ITEM_MENU_EQUIP:
+						Globals.player.inventory.equip(clickedSlot);
+						menuClose();
+						
+						break;
 					case ITEM_MENU_USE:
 						/*
 						 * call the use command on the item from the slot - (can the item handle it's own destruction?)
 						 */
+						// TODO: pass this off to the inventory class
 						clickedSlot.decreaseQty(1);
 						slotItem.use();
 						menuClose();
@@ -142,6 +153,7 @@ public class StateGameInventory extends AbstractState {
 						/*
 						 * drop the item from the slot, if more than 3 ask how many user would like to drop
 						 */
+						// TODO: pass this off to the inventory class
 						SavePart itemSave = slotItem.getSavePart();
 
 						if(itemSave.get("class") != null) {
@@ -176,6 +188,7 @@ public class StateGameInventory extends AbstractState {
 						/*
 						 * similar to drop but instead of putting back into game world delete the item(s)
 						 */
+						// TODO: pass this off to the inventory class
 						clickedSlot.decreaseQty(1);
 						menuClose();
 						

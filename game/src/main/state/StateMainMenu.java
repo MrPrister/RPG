@@ -46,7 +46,7 @@ public class StateMainMenu extends AbstractState {
 
 	@Override
 	void open(int previousStateID) {
-
+		// TODO: we need to clear old globals here
 	}
 
 	@Override
