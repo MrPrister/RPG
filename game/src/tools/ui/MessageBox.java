@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 import tools.UserInput;
 
-public class MessageBox extends AbstractUIContainer {
+public class MessageBox extends AbstractUIElement {
 
 	// only renders when open is set to true
 	public boolean open = false;
@@ -21,7 +21,7 @@ public class MessageBox extends AbstractUIContainer {
 	}
 	
 	@Override
-	public void render(SpriteBatch batch, float x, float y) {
+	public void render(SpriteBatch batch) {
 		if(open) {
 			batch.begin();
 			
@@ -31,7 +31,7 @@ public class MessageBox extends AbstractUIContainer {
 			
 			batch.end();
 			
-			if(backgroundColor != null) {
+			if(skin.getBackgroundColor() != null) {
 				ShapeRenderer shapeRenderer = new ShapeRenderer();
 				shapeRenderer.setProjectionMatrix(batch.getProjectionMatrix());
 		    	shapeRenderer.setTransformMatrix(batch.getTransformMatrix());
@@ -39,14 +39,14 @@ public class MessageBox extends AbstractUIContainer {
 		    	batch.end();
 		    	
 				shapeRenderer.begin(ShapeType.Filled);
-					shapeRenderer.setColor(backgroundColor);
+					shapeRenderer.setColor(skin.getBackgroundColor());
 					shapeRenderer.rect(x, y, width, -height);
 				shapeRenderer.end();
 				
 				batch.begin();
 			}
 			
-			if(borderColor != null) {
+			if(skin.getBorderColor() != null) {
 				ShapeRenderer shapeRenderer = new ShapeRenderer();
 				shapeRenderer.setProjectionMatrix(batch.getProjectionMatrix());
 		    	shapeRenderer.setTransformMatrix(batch.getTransformMatrix());
@@ -54,14 +54,12 @@ public class MessageBox extends AbstractUIContainer {
 		    	batch.end();
 		    	
 				shapeRenderer.begin(ShapeType.Line);
-					shapeRenderer.setColor(borderColor);
+					shapeRenderer.setColor(skin.getBorderColor());
 					shapeRenderer.rect(x, y, width, -height);
 				shapeRenderer.end();
 				
 				batch.begin();
 			}
-			
-			super.render(batch, x, y);
 		}
 	}
 

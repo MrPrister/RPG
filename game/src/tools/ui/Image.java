@@ -16,24 +16,15 @@ public class Image extends AbstractUIElement {
 	private float rotation = 0;
 	
 	@Override
-	public void render(SpriteBatch batch, float x, float y) {
-		//renderX = getX();
-		//renderY = getY();
-		
-		renderX = x;
-		renderY = y;
-		
-		if(height == -1) {
-			height = image.getHeight();
-		}
-		if(width == -1) {
-			width = image.getWidth();
-		}
+	public void render(SpriteBatch batch) {
+		float renderX = getRenderX();
+		float renderY = getRenderY();
 		
 		float scaledHeight = image.getHeight() * scale;
 		float scaledWidth = image.getWidth() * scale;
 		
-		if(hover && !focus) {
+		// TODO: move skin change to update
+		/*if(hover && !focus) {
 			if(hoverDeltaX != 0) {
 				renderX += hoverDeltaX;
 			}
@@ -47,37 +38,10 @@ public class Image extends AbstractUIElement {
 			if(activeDeltaY != 0) {
 				renderY += activeDeltaY;
 			}
-		}
+		}*/
 		
-		if(backgroundColor != null) {
-			ShapeRenderer shapeRenderer = new ShapeRenderer();
-			shapeRenderer.setProjectionMatrix(batch.getProjectionMatrix());
-	    	shapeRenderer.setTransformMatrix(batch.getTransformMatrix());
-	    	
-	    	batch.end();
-	    	
-			shapeRenderer.begin(ShapeType.Filled);
-				shapeRenderer.setColor(backgroundColor);
-				shapeRenderer.rect(renderX, renderY, scaledWidth, -scaledHeight);
-			shapeRenderer.end();
-			
-			batch.begin();
-		}
-		
-		if(borderColor != null) {
-			ShapeRenderer shapeRenderer = new ShapeRenderer();
-			shapeRenderer.setProjectionMatrix(batch.getProjectionMatrix());
-	    	shapeRenderer.setTransformMatrix(batch.getTransformMatrix());
-	    	
-	    	batch.end();
-	    	
-			shapeRenderer.begin(ShapeType.Line);
-				shapeRenderer.setColor(borderColor);
-				shapeRenderer.rect(renderX, renderY, scaledWidth, -scaledHeight);
-			shapeRenderer.end();
-			
-			batch.begin();
-		}
+		renderBackground(batch);
+		renderBorder(batch);
 		
 		batch.draw(image, renderX, renderY - scaledHeight, 0, 0, scaledWidth, scaledHeight, scale, scale, rotation, 0, 0, (int) image.getWidth(), (int) image.getHeight(), false, false);
 	}

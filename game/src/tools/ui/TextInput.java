@@ -105,10 +105,8 @@ public class TextInput extends AbstractUIElement {
 			focus = true;
 		}
 		
-		renderX = getX();
-		renderY = getY();
-		
-		if(hover && !focus) {
+		// TODO: redo using skin swapping in the update function
+		/*if(hover && !focus) {
 			if(hoverDeltaX != 0) {
 				renderX += hoverDeltaX;
 			}
@@ -122,48 +120,20 @@ public class TextInput extends AbstractUIElement {
 			if(activeDeltaY != 0) {
 				renderY += activeDeltaY;
 			}
-		}
+		}*/
 	}
 	
 	@Override
-	public void render(SpriteBatch batch, float x, float y) {
-		renderX = x;
-		renderY = y;
+	public void render(SpriteBatch batch) {
+		float renderX = x;
+		float renderY = y;
 		
-		
-		if(backgroundColor != null) {
-			ShapeRenderer shapeRenderer = new ShapeRenderer();
-			shapeRenderer.setProjectionMatrix(batch.getProjectionMatrix());
-	    	shapeRenderer.setTransformMatrix(batch.getTransformMatrix());
-	    	
-	    	batch.end();
-	    	
-			shapeRenderer.begin(ShapeType.Filled);
-				shapeRenderer.setColor(backgroundColor);
-				shapeRenderer.rect(renderX, renderY, width, -height);
-			shapeRenderer.end();
-			
-			batch.begin();
-		}
-		
-		if(borderColor != null) {
-			ShapeRenderer shapeRenderer = new ShapeRenderer();
-			shapeRenderer.setProjectionMatrix(batch.getProjectionMatrix());
-	    	shapeRenderer.setTransformMatrix(batch.getTransformMatrix());
-	    	
-	    	batch.end();
-	    	
-			shapeRenderer.begin(ShapeType.Line);
-				shapeRenderer.setColor(borderColor);
-				shapeRenderer.rect(renderX, renderY, width, -height);
-			shapeRenderer.end();
-			
-			batch.begin();
-		}
+		renderBackground(batch);
+		renderBorder(batch);
 		
 		// we need to only show up to width worth of text, if the text exceeds width then we hide some of it, depending on claret position
 		
-		BitmapFont fontToRender = font;
+		BitmapFont fontToRender = skin.getFont();
 		String textToRender = text;
 		
 		if(!focus && text == "") {
@@ -172,19 +142,22 @@ public class TextInput extends AbstractUIElement {
 				fontToRender = defaultFont;
 			}
 		}
+		
+		/*
 		if(hover && hoverFont != null) {
 			fontToRender = hoverFont;
 		}
 		if(focus && activeFont != null) {
 			fontToRender = activeFont;
 		}
+		*/
 		
 		fontToRender.draw(batch, textToRender, renderX + internalPaddingX, renderY - internalPaddingY);
 		
 		if(focus) {
 			// draw the claret
 			if(Globals.delayManager.isDelayFinished("ClaretOff")) {
-				TextBounds bounds = font.getBounds(text.substring(0, claret));
+				TextBounds bounds = skin.getFont().getBounds(text.substring(0, claret));
 				float claretRenderX =  renderX + bounds.width;
 				fontToRender.draw(batch, "|", claretRenderX + internalPaddingX, renderY - internalPaddingY);
 				
@@ -213,8 +186,8 @@ public class TextInput extends AbstractUIElement {
 	@Override
 	void clicked(UserInput input) {		
 		for (int i = 0; i < text.length(); i++) {
-			TextBounds bounds = font.getBounds(text.substring(0, i));
-			if(input.mouseX() > (renderX + bounds.width)) {
+			TextBounds bounds = skin.getFont().getBounds(text.substring(0, i));
+			if(input.mouseX() > (getRenderX() + bounds.width)) {
 				claret = i;
 			} else {
 				return;

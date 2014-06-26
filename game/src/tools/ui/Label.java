@@ -17,37 +17,31 @@ public class Label extends AbstractUIElement {
 
 	public Label(String string, BitmapFont font) {
 		setText(string);
-		setFont(font);
+		skin.setFont(font);
 		
-		setHeight(getFont().getBounds(getText()).height);
-		setWidth(getFont().getBounds(getText()).width);
-	}
-
-	@Override
-	public void render(SpriteBatch batch) {
-		render(batch, getX(), getY());
+		setHeight(skin.getFont().getBounds(getText()).height);
+		setWidth(skin.getFont().getBounds(getText()).width);
 	}
 	
 	/**
-	 * render the label with a starting position of x, y using the sprite batch
+	 * render the label using the sprite batch
 	 * @param batch
-	 * @param x
-	 * @param y
 	 */
-	public void render(SpriteBatch batch, float x, float y) {
-		float renderX = x;
-		float renderY = y;
+	public void render(SpriteBatch batch) {
+		float renderX = getRenderX();
+		float renderY = getRenderY();
 		
-		if(hover) {
+		// TODO: move to update and use skin swapping
+		/*if(hover) {
 			if(hoverDeltaX != 0) {
 				renderX += hoverDeltaX;
 			}
 			if(hoverDeltaY != 0) {
 				renderY += hoverDeltaY;
 			}
-		}
+		}*/
 		
-		font.draw(batch, text, renderX, renderY);
+		skin.getFont().draw(batch, text, renderX, renderY);
 	}
 
 	@Override

@@ -15,6 +15,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 /**
+ * TODO: needs a complete rework, might even try to remove entirely in favour of using a UIContianer
  * deals with the updating and display of menu items
  * @author mattadams
  *
@@ -628,9 +629,11 @@ public class Menu {
 			Label option = keyValuePair.getValue();
 			
 			if(getFocusIndex() == getIndexByOption(option)) {
-				option.render(batch, renderX + focusXDelta, renderY + focusYDelta);
+				//option.render(batch, renderX + focusXDelta, renderY + focusYDelta);
+				option.render(batch);
 			} else {
-				option.render(batch, renderX, renderY);	
+				//option.render(batch, renderX, renderY);
+				option.render(batch);
 			}
 			
 			if(inline) {
