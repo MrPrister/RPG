@@ -17,7 +17,7 @@ public class UI {
 	 * initialise a new UI
 	 */
 	public UI() {
-		
+		elements = new LinkedHashMap<Integer, AbstractUIElement>();
 	}
 	
 	/**
@@ -50,6 +50,15 @@ public class UI {
 			AbstractUIElement element = elementEntry.getValue();
 			element.update(delta);
 		}
+	}
+	
+	/**
+	 * add an element to the UI
+	 * @param element
+	 */
+	public void add(AbstractUIElement element) {
+		int index = elements.size();
+		elements.put(index + 1, element);
 	}
 
 }

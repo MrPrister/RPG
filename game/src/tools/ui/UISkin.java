@@ -1,5 +1,7 @@
 package tools.ui;
 
+import tools.Fonts;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -146,7 +148,7 @@ public class UISkin {
 	// ------------------------------------------------------------
 	//		FONT
 	// ------------------------------------------------------------
-	private BitmapFont font;
+	private BitmapFont font = Fonts.defaultFont;
 	
 	public BitmapFont getFont() {
 		return font;

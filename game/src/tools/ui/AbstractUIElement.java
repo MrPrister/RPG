@@ -105,9 +105,33 @@ public abstract class AbstractUIElement {
 	}
 	
 	// ------------------------------------------------------------
-	//		SKIN
+	//		SKINS
 	// ------------------------------------------------------------
-	protected UISkin skin = null;
+	private UISkin defaultSkin = new UISkin();			// default skin
+	public UISkin getDefaultSkin() {
+		return defaultSkin;
+	}
+	public void setDefaultSkin(UISkin defaultSkin) {
+		this.defaultSkin = defaultSkin;
+	}
+	
+	private UISkin hoverSkin = defaultSkin;				// hover skin
+	public UISkin getHoverSkin() {
+		return hoverSkin;
+	}
+	public void setHoverSkin(UISkin hoverSkin) {
+		this.hoverSkin = hoverSkin;
+	}
+	
+	private UISkin clickSkin = defaultSkin;				// click skin
+	public UISkin getClickSkin() {
+		return clickSkin;
+	}
+	public void setClickSkin(UISkin clickSkin) {
+		this.clickSkin = clickSkin;
+	}
+	
+	protected UISkin skin = defaultSkin;				// current skin
 	
 	public void setSkin(UISkin skin) {
 		this.skin = skin;
@@ -115,6 +139,7 @@ public abstract class AbstractUIElement {
 	public UISkin getSkin() {
 		return skin;
 	}
+	
 	
 	// ------------------------------------------------------------
 	//		USED INTERNALLY
@@ -129,14 +154,20 @@ public abstract class AbstractUIElement {
 		if(acceptMouseInput) {
 			if(mouseInBounds(input.mouseX(), input.mouseY())) {
 				hover = true;
+				skin = hoverSkin;
 			} else {
 				hover = false;
+				skin = defaultSkin;
 			}
 			
 			if(input.mouseClicked() && hover) {
 				click = true;
+				skin = clickSkin;
 			} else {
 				click = false;
+				if(!hover) {
+					skin = defaultSkin;
+				}
 			}
 		}
 		
