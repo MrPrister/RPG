@@ -8,7 +8,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import tools.Fonts;
 import tools.Globals;
 import tools.UserInput;
-import tools.ui.*;
+import tools.ui.Label;
+import tools.ui.Menu;
 
 public class StateMainMenu extends AbstractState {
 
@@ -17,11 +18,9 @@ public class StateMainMenu extends AbstractState {
 	private Menu menu;
 	private BitmapFont font;
 	
-	private UI ui;
-	
 	@Override
 	void init() {
-		/*font = Fonts.font42;
+		font = Fonts.font42;
 		
 		menu = new Menu();
 		
@@ -43,15 +42,6 @@ public class StateMainMenu extends AbstractState {
 		
 		menu.setOptionSpacing(40);
 		menu.setFocusXDelta(15);
-		*/
-		
-		ui = new UI();
-		
-		Label label = new Label("HELLO");
-		label.setX(10);
-		label.setY(10);
-		
-		ui.add(label);
 	}
 
 	@Override
@@ -61,13 +51,12 @@ public class StateMainMenu extends AbstractState {
 
 	@Override
 	void input(UserInput input) {
-		//menu.input(input);
-		ui.input(input);
+		menu.input(input);
 	}
 
 	@Override
 	void update(float delta) {
-		/*if(menu.hasSelected()) {
+		if(menu.hasSelected()) {
 			switch (menu.getSelected()) {
 			case 0:
 				// continue
@@ -116,9 +105,6 @@ public class StateMainMenu extends AbstractState {
 			// do nothing
 			menu.clearEscaped();
 		}
-		*/
-		
-		ui.update(delta);
 	}
 
 	@Override
@@ -128,8 +114,7 @@ public class StateMainMenu extends AbstractState {
 		
 		SpriteBatch batch = new SpriteBatch();
 		batch.begin();
-			//menu.render(batch);
-			ui.render(batch);
+			menu.render(batch);
 		batch.end();
 	}
 

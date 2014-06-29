@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 
 public class Fonts {
 
-	public static BitmapFont defaultFont;
 	public static BitmapFont font12;
 	public static BitmapFont font14;
 	public static BitmapFont font16;
@@ -34,9 +33,6 @@ public class Fonts {
 		font42 = generator.generateFont(42, FreeTypeFontGenerator.DEFAULT_CHARS, false);
 		font48 = generator.generateFont(48, FreeTypeFontGenerator.DEFAULT_CHARS, false);
 		font56 = generator.generateFont(56, FreeTypeFontGenerator.DEFAULT_CHARS, false);
-		
-		defaultFont = font18;
-		
 		generator.dispose();
 	}
 }
